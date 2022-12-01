@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "predict-short-term-rental-price"
+version = "0.1.0"
+description = ""
+authors = ["Gabe <wei.g.chu@gmail.com>"]
+readme = "README.md"
+packages = [{include = "predict_short_term_rental_price"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+wandb = "^0.13.5"
+mlflow = "^2.0.1"
+wandb-utils = "^0.1.2"
+fire = "^0.4.0"
+virtualenv = "^20.17.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
