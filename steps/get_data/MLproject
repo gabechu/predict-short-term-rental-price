@@ -1,0 +1,27 @@
+name: download_file
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+
+      sample:
+        description: Name of sample to download
+        type: string
+    
+      artifact_name:
+        description: Name for output artifact
+        type: string
+        default: sample.csv
+
+      artifact_type:
+        description: Type of the output artifact. This will be used to categorize the artifact in the W&B interface
+        type: string
+        default: raw_dataß
+      
+      artifact_description:
+        description: A brief description of the output artifact
+        type: string
+        default: Raw file as downloaded
+      
+    command: "python run.py --sample={sample} --artifact_name={artifact_name} --artifact_type={artifact_type} --artifact_description={artifact_description}"
