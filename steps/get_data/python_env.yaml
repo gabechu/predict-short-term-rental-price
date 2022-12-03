@@ -7,5 +7,4 @@ build_dependencies:
 dependencies:
   - mlflow
   - wandb
-  - wandb-utils
   - fire
