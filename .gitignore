@@ -133,3 +133,4 @@ mlruns/
 
 # weights & biases
 wandb/
+artifacts/
