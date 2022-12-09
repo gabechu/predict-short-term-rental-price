@@ -12,6 +12,7 @@ os.environ["WANDB_PROJECT"] = "nyc_airbnb"
 os.environ["WANDB_RUN_GROUP"] = "development"
 
 
+# TODO: make it a python package to reuse across projects
 def log_artifact(
     artifact_name, artifact_type, artifact_description, filename, wandb_run
 ):
@@ -34,6 +35,7 @@ def run(sample: str, artifact_name: str, artifact_type: str, artifact_descriptio
     # https://stackoverflow.com/questions/10724495/getting-all-arguments-and-values-passed-to-a-function
     args = locals()
 
+    # TODO: add arguments project
     run = wandb.init(job_type="download_file")
     run.config.update(args)
 
