@@ -7,6 +7,10 @@ import wandb
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
+# TODO: define wandb environment variables in a config file and read from config
+os.environ["WANDB_PROJECT"] = "nyc_airbnb"
+os.environ["WANDB_RUN_GROUP"] = "development"
+
 
 def log_artifact(
     artifact_name, artifact_type, artifact_description, filename, wandb_run

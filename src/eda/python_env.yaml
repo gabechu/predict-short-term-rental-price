@@ -5,6 +5,8 @@ build_dependencies:
   - pip
 # Dependencies required to run the project.
 dependencies:
-  - mlflow
   - wandb
-  - fire
+  - pandas
+  - jupyterlab
+  - pandas-profiling
+  - ipywidgets
