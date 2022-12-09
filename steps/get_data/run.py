@@ -30,6 +30,7 @@ def run(sample: str, artifact_name: str, artifact_type: str, artifact_descriptio
     # https://stackoverflow.com/questions/10724495/getting-all-arguments-and-values-passed-to-a-function
     args = locals()
 
+    # TODO: add arguments project
     run = wandb.init(job_type="download_file")
     run.config.update(args)
 
