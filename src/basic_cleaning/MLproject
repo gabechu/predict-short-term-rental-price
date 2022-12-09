@@ -1,0 +1,37 @@
+name: basic_cleaning
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      input_artifact:
+        description: Name of input file that will be retrieved from W&B to perform basic cleaning.
+        type: str
+        default: sample.csv:latest
+
+      output_artifact:
+        description: Name of output file that is going to be saved in W&B.
+        type: str
+        default: clean_sample.csv
+
+      output_type:
+        description: Type of the output artifact. This will be used to categorize the artifact in the W&B interface
+        type: string
+        default: clean_sample
+
+      output_description:
+        description: A brief description of the output artifact
+        type: string
+        default: Clean data without outliers
+
+      min_price:
+        description: Minimum property price, any data with a value below will be dropped
+        type: int
+        default: 10
+
+      max_price:
+        description: Maximum property price, any data with a value above will be dropped
+        type: int
+        default: 350
+
+    command: "python run.py --input_artifact={input_artifact} --output_artifact={output_artifact} --output_type={output_type} --output_description={output_description} --min_price={min_price} --max_price={max_price}"

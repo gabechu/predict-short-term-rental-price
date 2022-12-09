@@ -1,0 +1,10 @@
+# Python version required to run the project.
+python: "3.9.15"
+# Dependencies required to build packages. This field is optional.
+build_dependencies:
+  - pip
+# Dependencies required to run the project.
+dependencies:
+  - wandb
+  - fire
+  - pandas

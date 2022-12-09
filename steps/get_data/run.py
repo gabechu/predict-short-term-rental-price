@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 
+# TODO: make it a python package to reuse across projects
 def log_artifact(
     artifact_name, artifact_type, artifact_description, filename, wandb_run
 ):
