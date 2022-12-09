@@ -43,10 +43,12 @@ def run(
 ):
     args = locals()
 
+    # TODO: extract project and group to config
     wandb_project = "nyc_airbnb"
+    wandb_group = "development"
     wandb_job_type = "basic_cleaning"
 
-    run = wandb.init(project=wandb_project, job_type=wandb_job_type)
+    run = wandb.init(project=wandb_project, group=wandb_group, job_type=wandb_job_type)
     run.config.update(args)
     downloaded_file = wandb.use_artifact(input_artifact).file()
 
