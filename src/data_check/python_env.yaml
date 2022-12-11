@@ -5,6 +5,7 @@ build_dependencies:
   - pip
 # Dependencies required to run the project.
 dependencies:
-  - wandb
-  - fire
   - pandas
+  - pytest
+  - wandb
+  - scipy

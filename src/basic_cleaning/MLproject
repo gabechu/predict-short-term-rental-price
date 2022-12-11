@@ -25,13 +25,13 @@ entry_points:
         default: Clean data without outliers
 
       min_price:
-        description: Minimum property price, any data with a value below will be dropped
-        type: int
+        description: Minimum accepted price
+        type: float
         default: 10
 
       max_price:
-        description: Maximum property price, any data with a value above will be dropped
-        type: int
+        description: Maximum accepted price
+        type: float
         default: 350
 
     command: "python run.py --input_artifact={input_artifact} --output_artifact={output_artifact} --output_type={output_type} --output_description={output_description} --min_price={min_price} --max_price={max_price}"

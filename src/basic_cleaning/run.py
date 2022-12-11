@@ -38,8 +38,8 @@ def run(
     output_artifact: str,
     output_type: str,
     output_description: str,
-    min_price: int,
-    max_price: int,
+    min_price: float,
+    max_price: float,
 ):
     args = locals()
 
