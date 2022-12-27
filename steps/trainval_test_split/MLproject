@@ -1,0 +1,27 @@
+name: trainval_test_split
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      wandb_file:
+        description: Artifact to split, a CSV file
+        type: string
+        default: clean_sample.csv:latest
+
+      test_size:
+        description: Size of the test split. Fraction of the dataset, or number of items
+        type: float
+        default: 0.3
+
+      random_seed:
+        description: Seed for random number generator. Use this for reproducibility
+        type: int
+        default: 42
+
+      stratify_by:
+        description: Columns to use for stratification if any
+        type: string
+        default: "none"
+
+    command: "python run.py --wandb_file={wandb_file} --test_size={test_size} --random_seed={random_seed} --stratify_by={stratify_by}"
