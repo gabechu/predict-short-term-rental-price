@@ -36,7 +36,11 @@ def run(sample: str, artifact_name: str, artifact_type: str, artifact_descriptio
     args = locals()
 
     # TODO: add arguments project
-    run = wandb.init(job_type="download_file")
+    wandb_project = "nyc_airbnb"
+    wandb_group = "development"
+    wandb_job_type = "download_file"
+
+    run = wandb.init(project=wandb_project, group=wandb_group, job_type=wandb_job_type)
     run.config.update(args)
 
     logger.info(f"Returning sample {sample}")
